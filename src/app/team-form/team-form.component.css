@@ -1,0 +1,13 @@
+.team-form {
+  min-width: 200px;
+  max-width: 400px;
+  width: auto;
+}
+
+.team-form-field {
+  width: 100%;
+}
+
+.team-form-field-sm {
+  width: 50%;
+}
