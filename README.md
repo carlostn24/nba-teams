@@ -2,6 +2,8 @@
 
 This project shows a list of nba teams using the API:
 - Url: [https://api.balldontlie.io/v1/teams](https://api.balldontlie.io/v1/teams)
+- Authorization: c4dbbee1-ead9-49e2-8cef-91d942319bf6
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
 ## Development server
