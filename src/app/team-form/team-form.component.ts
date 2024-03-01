@@ -10,7 +10,7 @@ import { Team } from '../commons/interfaces/team.interface';
 })
 export class TeamFormComponent implements OnInit {
 
-  public teamFormaTitle: string = 'AGREGAR EQUIPO';
+  public teamFormaTitle: string = 'EDITAR EQUIPO';
 
   public teamFormGroup: FormGroup;
 
@@ -19,21 +19,30 @@ export class TeamFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public team: Team,
     private formBuilder: FormBuilder) {
       this.teamFormGroup = this.formBuilder.group({
-        id: [team.id, Validators.required],
-        conference: [team.conference],
-        division: [team.division],
-        city: [team.city, Validators.required],
-        name: [team.name, Validators.required],
-        full_name: [team.full_name],
-        abbreviation: [team.abbreviation]
+        id: [null, Validators.required],
+        conference: [null],
+        division: [null],
+        city: [null, Validators.required],
+        name: [null, Validators.required],
+        full_name: [null],
+        abbreviation: [null]
       });
-      if ( team.id === -1 ) {
-        this.teamFormaTitle = 'EDITAR EQUIPO';
-        this.teamFormGroup.get('id')?.disable();
-      }
+
   }
 
   public ngOnInit(): void {
+    this.teamFormGroup.get('id')?.setValue(this.team.id);
+    this.teamFormGroup.get('id')?.setValue(this.team.id);
+    this.teamFormGroup.get('conference')?.setValue(this.team.conference);
+    this.teamFormGroup.get('division')?.setValue(this.team.division);
+    this.teamFormGroup.get('city')?.setValue(this.team.city);
+    this.teamFormGroup.get('name')?.setValue(this.team.name);
+    this.teamFormGroup.get('full_name')?.setValue(this.team.full_name);
+    this.teamFormGroup.get('abbreviation')?.setValue(this.team.abbreviation);
+    if ( this.team.id === -1 ) {
+      this.teamFormaTitle = 'AGREGAR EQUIPO';
+      this.teamFormGroup.get('id')?.disable();
+    }
   }
 
   public onNoClick(): void {

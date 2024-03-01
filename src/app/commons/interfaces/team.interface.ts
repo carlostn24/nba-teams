@@ -6,16 +6,10 @@ export interface TeamResponse {
 
 export interface Team {
   id:           number;
-  conference:   Conference;
+  conference:   string;
   division:     string;
   city:         string;
   name:         string;
   full_name:    string;
   abbreviation: string;
-}
-
-export enum Conference {
-  East = "East",
-  Empty = "    ",
-  West = "West",
 }
